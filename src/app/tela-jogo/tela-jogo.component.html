@@ -1,0 +1,58 @@
+<body>
+<div class="centralizar" onload="VerificaGanhador()">
+    <div class="dados">
+        Jogador 1:
+        <input class="form-control" type="text" [(ngModel)]="Jogador1" placeholder="Jogador 1">
+        Jogador 2:
+        <input class="form-control" type="text" [(ngModel)]="Jogador2" placeholder="Jogador 2">
+        <button (click)="StartGame()">Começar Jogo</button>
+    </div>
+    <div class="ganhador" *ngIf="ganhador == 1">
+        <p>Jogador: <b>{{jog1}}</b> ganhou</p>
+       
+    </div>
+    <div class="ganhador" *ngIf="ganhador == 0">
+        <p>Jogador: {{jog2}} ganhou</p>
+        
+    </div>
+    <div class="ganhador" *ngIf="ganhador == 2">
+        <p>Empate</p>
+        
+    </div>
+    <button class="reiniciar" (click)="StartGame()" *ngIf="ganhador == 0 || ganhador == 1 || ganhador == 2">Reiniciar</button>
+    <div *ngIf="InicioJogo && ganhador != 1 && ganhador != 0 && ganhador != 2" style="font-size: 20px;">
+        Vez do jogador: {{VezJogador}}
+    </div>
+    <div class="Jogo" *ngIf="InicioJogo">
+        
+        <br>
+        <div id="div1" (click)="SetDiv1()">
+            {{div1}}
+        </div>
+        <div id="div2" (click)="SetDiv2()">
+            {{div2}}
+        </div>
+        <div id="div3" (click)="SetDiv3()">
+            {{div3}}
+        </div>
+        <div id="div4" (click)="SetDiv4()">
+            {{div4}}
+        </div>
+        <div id="div5" (click)="SetDiv5()">
+            {{div5}}
+        </div>
+        <div id="div6" (click)="SetDiv6()">
+            {{div6}}
+        </div>
+        <div id="div7" (click)="SetDiv7()">
+            {{div7}}
+        </div>
+        <div id="div8" (click)="SetDiv8()">
+            {{div8}}
+        </div>
+        <div id="div9" (click)="SetDiv9()">
+            {{div9}}
+        </div>
+    </div>
+</div>
+</body>
